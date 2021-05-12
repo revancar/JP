@@ -38,7 +38,7 @@ class MoviesAdapter: PagedListAdapter<MovieEntity, MoviesAdapter.MoviesViewHolde
                 tvRating.text = movies.rating
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.EXTRA_FILM, movies.title)
+                    intent.putExtra(DetailActivity.EXTRA_FILM, movies.movieId)
                     itemView.context.startActivity(intent)
                 }
                 Glide.with(itemView.context)

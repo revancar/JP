@@ -36,8 +36,8 @@ private val appExecutors: AppExecutors): FilmDataSource{
             override fun loadFromDB(): LiveData<PagedList<MovieEntity>>{
                 val config = PagedList.Config.Builder()
                     .setEnablePlaceholders(false)
-                    .setInitialLoadSizeHint(4)
-                    .setPageSize(4)
+                    .setInitialLoadSizeHint(5)
+                    .setPageSize(5)
                     .build()
                 return LivePagedListBuilder(localDataSource.getAllMovies(), config).build()
             }
@@ -107,8 +107,8 @@ private val appExecutors: AppExecutors): FilmDataSource{
             override fun loadFromDB(): LiveData<PagedList<TvShowEntity>> {
                 val config = PagedList.Config.Builder()
                     .setEnablePlaceholders(false)
-                    .setInitialLoadSizeHint(4)
-                    .setPageSize(4)
+                    .setInitialLoadSizeHint(5)
+                    .setPageSize(5)
                     .build()
                 return LivePagedListBuilder(localDataSource.getAllTvShows(), config).build()
             }
@@ -172,8 +172,8 @@ private val appExecutors: AppExecutors): FilmDataSource{
     override fun getFavMovies(): LiveData<PagedList<MovieEntity>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
-            .setInitialLoadSizeHint(4)
-            .setPageSize(4)
+            .setInitialLoadSizeHint(5)
+            .setPageSize(5)
             .build()
         return LivePagedListBuilder(localDataSource.getFavMovie(), config).build()
     }
@@ -181,8 +181,8 @@ private val appExecutors: AppExecutors): FilmDataSource{
     override fun getFavTvShows(): LiveData<PagedList<TvShowEntity>>{
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
-            .setInitialLoadSizeHint(4)
-            .setPageSize(4)
+            .setInitialLoadSizeHint(5)
+            .setPageSize(5)
             .build()
         return LivePagedListBuilder(localDataSource.getFavTvShow(), config).build()
     }

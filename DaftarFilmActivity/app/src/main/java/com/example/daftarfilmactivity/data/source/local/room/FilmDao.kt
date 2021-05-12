@@ -15,10 +15,10 @@ interface FilmDao {
     @Query("SELECT * FROM tb_tvshow")
     fun getAllTvShows(): DataSource.Factory<Int, TvShowEntity>
 
-    @Query("SELECT * FROM tb_movie WHERE favorite = 1")
+    @Query("SELECT * FROM tb_movie where favorite = 1")
     fun getMovieFav(): DataSource.Factory<Int, MovieEntity>
 
-    @Query("SELECT * FROM tb_tvshow WHERE favorite = 1")
+    @Query("SELECT * FROM tb_tvshow where favorite = 1")
     fun getTvShowsFav(): DataSource.Factory<Int, TvShowEntity>
 
     @Transaction

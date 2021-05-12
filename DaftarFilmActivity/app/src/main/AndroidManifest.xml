@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.daftarfilmactivity">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DaftarFilmActivity">
+        <activity android:name=".ui.favorite.FavoriteActivity"></activity>
         <activity
             android:name=".ui.detail.DetailActivity"
             android:parentActivityName=".ui.home.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.home.MainActivity"/>
+                android:value=".ui.home.MainActivity" />
         </activity>
         <activity android:name=".ui.home.MainActivity">
             <intent-filter>

@@ -38,7 +38,7 @@ class TvShowAdapter: PagedListAdapter<TvShowEntity, TvShowAdapter.TvShowViewHold
                 tvRating.text = tvShow.rating
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
-                    intent.putExtra(DetailActivity.EXTRA_TV, tvShow.title)
+                    intent.putExtra(DetailActivity.EXTRA_TV, tvShow.tvShowId)
                     itemView.context.startActivity(intent)
                 }
                 Glide.with(itemView.context)

@@ -10,8 +10,8 @@ import com.example.daftarfilmactivity.data.source.local.entity.TvShowEntity
 import com.example.daftarfilmactivity.vo.Resource
 
 class ViewModelDetail(private val filmRepository: FilmRepository): ViewModel() {
-//    private lateinit var movie: String
-//    private lateinit var tvShow: String
+    private lateinit var movie: String
+    private lateinit var tvShow: String
     val movieId = MutableLiveData<String>()
     val tvShowId = MutableLiveData<String>()
 
@@ -35,18 +35,28 @@ class ViewModelDetail(private val filmRepository: FilmRepository): ViewModel() {
         filmRepository.getTvShowsDetail(mTvShow)
     }
 
-//    fun getSelectedMovies(): LiveData<MovieEntity> =
-//        filmRepository.getMoviesDetail(movie)
-//
-//    fun getSelectedTvShows(): LiveData<TvShowEntity> =
-//        filmRepository.getTvShowsDetail(tvShow)
 
-//    fun setFavMovie(movie: MovieEntity){
-//        filmRepository.setFavMovies(movie, state = true)
-//    }
-//
-//    fun setFavTvShow(tvShow: TvShowEntity){
-//        filmRepository.setFavTvShows(tvShow, state = true)
-//    }
+    fun setFavMovie(){
+        val movieVal = getSelectedMovies.value
+        if(movieVal != null){
+            val movies = movieVal.data
+            if(movies != null){
+                val newState = !movies.favorite
+                filmRepository.setFavMovies(movies, newState)
+            }
+        }
+
+    }
+
+    fun setFavTvShow(){
+        val tvShowVal = getSelectedTvShow.value
+        if(tvShowVal != null){
+            val tvShows = tvShowVal.data
+            if(tvShows != null){
+                val newState = !tvShows.favorite
+                filmRepository.setFavTvShows(tvShows, newState)
+            }
+        }
+    }
 
 }

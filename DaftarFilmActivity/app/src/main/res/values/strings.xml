@@ -10,4 +10,8 @@
     <string name="tab2">TvShows</string>
     <string name="overview">Overview</string>
     <string name="setting">Setting</string>
+    <string name="favorite">Favorite</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="borderfav">BorderFavorite</string>
 </resources>

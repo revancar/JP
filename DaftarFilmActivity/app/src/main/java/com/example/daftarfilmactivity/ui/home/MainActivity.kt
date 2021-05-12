@@ -1,5 +1,6 @@
 package com.example.daftarfilmactivity.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.example.daftarfilmactivity.R
+import com.example.daftarfilmactivity.ui.favorite.FavoriteActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val sectionPagerAdapter = SectionPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
         viewPager.adapter = sectionPagerAdapter
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabs, viewPager) {tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
+
 
         supportActionBar?.elevation = 0f
     }
@@ -42,6 +46,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
+        return when(item.itemId){
+            R.id.favorite -> {
+                val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
+                startActivity(intent)
+                true
+            }else -> true
+        }
     }
 }

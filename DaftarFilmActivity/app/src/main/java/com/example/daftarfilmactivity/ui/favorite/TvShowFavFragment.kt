@@ -42,11 +42,13 @@ class TvShowFavFragment : Fragment() {
                 adapter.submitList(tvShows)
             })
 
-            with(fragmentTvShowFavBinding?.rvTvShow){
-                this?.layoutManager = LinearLayoutManager(context)
-                this?.setHasFixedSize(true)
-                this?.adapter = adapter
-            }
+//            with(fragmentTvShowFavBinding?.rvTvShow){
+//                this?.layoutManager = LinearLayoutManager(context)
+//                this?.adapter = adapter
+//        }
+            binding?.rvTvShow?.layoutManager =LinearLayoutManager(context)
+            binding?.rvTvShow?.adapter = adapter
+
         }
     }
 
