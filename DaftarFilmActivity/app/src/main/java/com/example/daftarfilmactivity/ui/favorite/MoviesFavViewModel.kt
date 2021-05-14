@@ -8,9 +8,4 @@ import com.example.daftarfilmactivity.data.source.local.entity.MovieEntity
 
 class MoviesFavViewModel(private val filmRepository: FilmRepository) : ViewModel() {
     fun getFavMovies(): LiveData<PagedList<MovieEntity>> = filmRepository.getFavMovies()
-
-    fun setFavMovies(movie: MovieEntity) {
-        val newState = !movie.favorite
-        filmRepository.setFavMovies(movie, newState)
-    }
 }

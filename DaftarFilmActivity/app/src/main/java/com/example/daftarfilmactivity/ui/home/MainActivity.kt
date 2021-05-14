@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        actionBar?.setTitle(R.string.dbfilm)
+        supportActionBar?.setTitle(R.string.dbfilm)
 
 
         val sectionPagerAdapter = SectionPagerAdapter(this)

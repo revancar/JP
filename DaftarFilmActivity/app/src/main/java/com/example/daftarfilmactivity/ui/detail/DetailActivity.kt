@@ -36,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         DetailActivityBinding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(DetailActivityBinding.root)
+        actionBar?.setTitle(R.string.detailFilm)
+        supportActionBar?.setTitle(R.string.detailFilm)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

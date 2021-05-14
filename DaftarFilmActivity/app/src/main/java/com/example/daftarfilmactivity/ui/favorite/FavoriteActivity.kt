@@ -21,6 +21,8 @@ class FavoriteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite)
+        actionBar?.setTitle(R.string.favoriteActivity)
+        supportActionBar?.setTitle(R.string.favoriteActivity)
 
 
         val sectionPagerAdapterFav = SectionPagerAdapterFav(this)

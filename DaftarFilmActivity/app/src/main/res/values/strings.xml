@@ -14,4 +14,7 @@
     <string name="title_home">Home</string>
     <string name="title_favorite">Favorite</string>
     <string name="borderfav">BorderFavorite</string>
+    <string name="dbfilm">DB Film</string>
+    <string name="detailFilm">Detail Film</string>
+    <string name="favoriteActivity">Your Favorite</string>
 </resources>
